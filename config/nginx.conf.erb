@@ -144,12 +144,12 @@ http {
     <% end %>
 
     location ~* \index.html$ {
-      expires -1;
+      etag on;
       <% if ENV["NGINX_DEBUG"] %>add_header Ember-Cli-Html on;<% end %>
     }
 
     location ~* \.(ogg|ogv|svgz|mp4|css|rss|atom|js|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf|html|txt|htm)$ {
-      expires max;
+      etag on;
       log_not_found off;
       access_log off;
       add_header Cache-Control public;
