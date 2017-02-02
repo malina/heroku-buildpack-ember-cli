@@ -150,6 +150,7 @@ http {
 
     location ~* \.(ogg|ogv|svgz|mp4|css|rss|atom|js|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf|html|txt|htm)$ {
       etag on;
+      expires 365d;
       log_not_found off;
       access_log off;
       add_header Cache-Control public;
